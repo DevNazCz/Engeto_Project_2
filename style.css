@@ -1,0 +1,233 @@
+/* Normalize css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color-main);
+  max-width: 100%;
+  color: var(--color-white);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Styles to use */
+
+:root {
+  --bg-color-main: #000;
+  --color-red: rgb(214, 28, 28);
+  --color-white: #fff;
+  --color-links: grey;
+}
+
+.absolute-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  margin: 0 auto;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: var(--color-white);
+  background: var(--color-red);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Scroll button */
+
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.scroll-top:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Header */
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg-color-main);
+  width: 100%;
+  position: relative;
+}
+
+.netflix-logo {
+  width: 9.25rem;
+  height: 2.5rem;
+  margin: 1.25rem;
+  padding: 5px 10px;
+}
+
+.registration-btn {
+  margin: 20px;
+}
+
+/* Start section */
+
+.start-section {
+  min-height: 90vh;
+}
+
+.start-section::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url(./images/background.jpg) center/cover no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+  height: 100%;
+}
+
+.registration-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  padding: 0 1.5rem;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  max-width: 30rem;
+}
+
+.price-description {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.form-title {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.form-block {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+#email-form {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.email-block {
+  flex: 1;
+  background: transparent;
+}
+
+/* Top films section */
+
+.top-films-section {
+  background: var(--bg-color-main);
+  padding: 3rem 0;
+}
+
+.top-films-list {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.top-films-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.top-films-item img:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
+}
+
+.btn-block {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* Footer */
+
+footer {
+  background: var(--bg-color-main);
+  color: var(--color-links);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1.2rem 1.2rem;
+  max-width: 1000px;
+}
+
+.footer-links li {
+  margin-bottom: 0.1rem;
+  flex-basis: 25%;
+}
+
+.footer-links a {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-links);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+/* Using media quries */
+
+@media (max-width: 768px) {
+  .footer {
+    justify-content: start;
+    padding-left: 2rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-links li {
+    flex-basis: 32%;
+  }
+}
