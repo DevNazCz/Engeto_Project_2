@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+input {
+  color: var(--color-white);
+}
+
 /* Styles to use */
 
 :root {
@@ -58,6 +62,7 @@ a {
 /* Scroll button */
 
 .scroll-top {
+  display: none;
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -211,6 +216,29 @@ footer {
 .footer-links a:hover {
   color: var(--color-white);
   text-decoration: underline;
+}
+
+/* Registration page */
+
+.registration-wrapper {
+  color: var(--color-white);
+  height: 100vh;
+}
+
+.registration-page-form {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  width: 500px;
+  padding: 0 1.5rem;
+}
+
+.inputs {
+  display: block;
+  padding: 1rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
 }
 
 /* Using media quries */
