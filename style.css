@@ -28,6 +28,14 @@ a {
 
 input {
   color: var(--color-white);
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
+}
+
+input:focus {
+  background-color: #696969;
 }
 
 /* Styles to use */
@@ -235,10 +243,6 @@ footer {
 
 .inputs {
   display: block;
-  padding: 1rem 0.5rem;
-  background: transparent;
-  border: 1px solid var(--color-white);
-  border-radius: 5px;
 }
 
 /* Using media quries */
