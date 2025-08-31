@@ -3,7 +3,7 @@
 const scrollButton = document.getElementById("scroll-btn");
 
 window.addEventListener("scroll", () => {
-  scrollButton.style.display = scrollY <= 250 ? "none" : "block";
+  scrollButton.classList.toggle("hidden", scrollY <= 250);
 });
 
 // Function to validate password confirmation
@@ -12,19 +12,20 @@ const firstPass = document.getElementById("input-password");
 const secondPass = document.getElementById("input-second-password");
 
 const validatePasswords = () => {
-  if (firstPass.value === "" || secondPass.value === "") {
-    firstPass.style.borderColor = "";
-    secondPass.style.borderColor = "";
+  const pass1 = firstPass.value;
+  const pass2 = secondPass.value;
+
+  firstPass.classList.remove("valid", "invalid");
+  secondPass.classList.remove("valid", "invalid");
+
+  if (pass1 === "" && pass2 === "") {
     return;
   }
 
-  if (firstPass.value !== secondPass.value) {
-    firstPass.style.borderColor = "red";
-    secondPass.style.borderColor = "red";
-  } else {
-    firstPass.style.borderColor = "green";
-    secondPass.style.borderColor = "green";
-  }
+  const className = pass1 === pass2 ? "valid" : "invalid";
+
+  firstPass.classList.add(className);
+  secondPass.classList.add(className);
 };
 
 firstPass.addEventListener("input", validatePasswords);
