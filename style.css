@@ -35,10 +35,6 @@ input {
   border-radius: 5px;
 }
 
-input:focus {
-  background-color: #696969;
-}
-
 /* Styles to use */
 
 :root {
@@ -60,6 +56,7 @@ input:focus {
 }
 
 .button {
+  text-align: center;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -253,8 +250,37 @@ footer {
   padding: 0 1.5rem;
 }
 
+.registration-page-btn {
+  margin: 1.25rem;
+}
+
 .inputs {
   display: block;
+}
+
+/* Films select page */
+
+.films-select-section {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.back-link {
+  display: block;
+  max-width: 150px;
+  margin-top: 3rem;
+}
+
+select {
+  max-width: 170px;
+  margin-top: 2rem;
+  padding: 5px;
+  color: var(--color-white);
+
+  background-color: var(--bg-color-main);
+  border: 1px solid var(--color-red);
 }
 
 /* Using media quries */
