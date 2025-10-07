@@ -7,7 +7,7 @@
     <title>Films</title>
   </head>
   <body>
-    <section class="films-select-section">
+    <section class="films-select-section" id="section">
       <a href="index.html" class="button back-link">Úvodní stránka</a>
       <select id="films-select">
         <option value="" disabled selected>Vyberte možnost</option>
@@ -16,7 +16,9 @@
         <option value="avengers">Avengers</option>
         <option value="horror">Horror</option>
       </select>
-      <div class="movies"></div>
+      <div id="movies"></div>
     </section>
+
+    <script src="./scriptFilms.js" defer></script>
   </body>
 </html>
