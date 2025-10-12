@@ -1,19 +1,18 @@
-const filmsDropdown = document.getElementById("films-select");
+const select = document.getElementById("films-select");
 const moviesSection = document.getElementById("movies");
 
 const loadShows = () => {
-  const searchTerm = filmsDropdown.value.trim();
-  if (!searchTerm) return; // Do nothing if no input is selected
+  moviesSection.innerHTML = ""; // Clear previous results
 
-  fetch(
-    `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(searchTerm)}`
-  )
+  const value = select.value.trim();
+  if (!value) return; // Do nothing if no input is selected
+
+  fetch(`https://api.tvmaze.com/search/shows?q=${value}`)
     .then((response) => response.json())
-    .then((results) => {
-      moviesSection.innerHTML = ""; // Clear previous results
-
-      for (const result of results) {
+    .then((data) => {
+      for (const result of data) {
         const show = result.show;
+
         // Display image only if it exists
         if (show.image?.medium) {
           const imgElement = document.createElement("img");
@@ -22,12 +21,24 @@ const loadShows = () => {
           moviesSection.appendChild(imgElement);
         }
       }
+      // Display a message if no results were found
+      if (data.length === 0) {
+        const noResultsElement = document.createElement("p");
+        noResultsElement.textContent =
+          "No shows found for your search. Please try a different selection.";
+        moviesSection.appendChild(noResultsElement);
+      }
     })
     .catch((error) => {
       console.error("Error while fetching data:", error);
+      const errorElement = document.createElement("p");
+      errorElement.textContent =
+        "Error loading data. Please check your internet connection or try again later.";
+
+      // Append the error message to the results section
+      moviesSection.appendChild(errorElement);
     });
 };
 
-// Run when user changes selection or when page loads
-filmsDropdown.addEventListener("change", loadShows);
-window.addEventListener("DOMContentLoaded", loadShows);
+// Run when user changes selection
+select.addEventListener("change", loadShows);

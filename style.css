@@ -56,45 +56,13 @@ input {
 }
 
 .button {
-  text-align: center;
   cursor: pointer;
+  text-align: center;
   border: none;
   border-radius: 5px;
   color: var(--color-white);
   background: var(--color-red);
-  padding: 0.75rem 1.5rem;
-}
-
-/* Styles to use in Java Script for passwords*/
-
-#input-password.valid,
-#input-second-password.valid,
-#input-password.valid:focus,
-#input-second-password.valid:focus {
-  border-color: var(--color-valid-green);
-}
-
-#input-password.invalid,
-#input-second-password.invalid,
-#input-password.invalid:focus,
-#input-second-password.invalid:focus {
-  border-color: var(--color-red);
-}
-
-/* Scroll button */
-
-.scroll-top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-}
-
-.scroll-top:hover {
-  transform: scale(1.1);
-}
-
-.hidden {
-  display: none;
+  padding: 0.5rem 1rem;
 }
 
 /* Header */
@@ -109,7 +77,7 @@ input {
 
 .registration-btn,
 .netflix-logo {
-  padding: 1.25rem;
+  margin: 1rem;
 }
 
 /* Start section */
@@ -128,12 +96,12 @@ input {
   height: 100%;
 }
 
-.registration-block {
+.start-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 600px;
-  padding: 0 1.5rem;
+  padding: 0;
+  margin: 1rem;
 }
 
 .main-title {
@@ -147,10 +115,11 @@ input {
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .form-title {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 400;
 }
@@ -165,20 +134,19 @@ input {
   width: 100%;
   padding: 1rem 0.5rem;
   background: transparent;
-  border: 1px solid white;
+  border: 1px solid var(--color-white);
   border-radius: 5px;
 }
 
 .email-block {
   flex: 1;
-  background: transparent;
 }
 
 /* Top films section */
 
 .top-films-section {
   background: var(--bg-color-main);
-  padding: 3rem 0;
+  padding: 3rem 1rem;
 }
 
 .top-films-list {
@@ -195,7 +163,7 @@ input {
 }
 
 .top-films-item img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .btn-block {
@@ -227,7 +195,6 @@ footer {
   font-size: 14px;
   line-height: 1.7;
   color: var(--color-links);
-  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -235,71 +202,20 @@ footer {
   text-decoration: underline;
 }
 
-/* Registration page */
+/* Scroll button */
 
-.registration-wrapper {
-  color: var(--color-white);
-  height: 100vh;
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
 }
 
-.registration-page-form {
-  display: flex;
-  gap: 1em;
-  flex-direction: column;
-  width: 500px;
-  padding: 0 1.5rem;
+.scroll-top:hover {
+  transform: scale(1.1);
 }
 
-.registration-page-btn {
-  margin: 1.25rem;
-}
-
-.inputs {
-  display: block;
-}
-
-/* Films select page */
-
-.films-select-section {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.back-link {
-  display: block;
-  max-width: 150px;
-  margin-top: 3rem;
-}
-
-select {
-  max-width: 170px;
-  margin-top: 2rem;
-  padding: 10px;
-  color: var(--color-white);
-
-  background-color: var(--bg-color-main);
-  border: 1px solid var(--color-red);
-}
-
-#movies {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-  max-width: 1600px;
-}
-
-#movies img {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  transform: rotate(4deg);
-}
-
-#movies img:hover {
-  transform: rotate(0deg) scale(1.05);
+.hidden {
+  display: none;
 }
 
 /* Using media quries */
